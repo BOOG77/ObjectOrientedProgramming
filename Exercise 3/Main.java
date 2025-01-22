@@ -8,20 +8,28 @@
 public class Main {
     public static void main(String[] args) {
         // Creating student object
-        Student student = new Student();
+            Student studentOne = new Student();
 
         // Setting student attributes
-        student.setName("Boog");
-        student.setAge(25);
-        student.setId(9999);
+            studentOne.setName("Boog");
+            studentOne.setAge(25);
+            studentOne.setId(9999);
 
         // studentInfo method
-        System.out.println(student.studentInfo());
+            studentOne.studentInfo();
 
         // Getting student attributes individually
-        System.out.println(student.getName());
-        System.out.println(student.getAge());
-        System.out.println(student.getId());
+            System.out.println(studentOne.getName());
+            System.out.println(studentOne.getAge());
+            System.out.println(studentOne.getId());
+
+        // Displaying the default values being assigned by the constructor
+            Student defaultStudent = new Student();
+            defaultStudent.studentInfo();
+
+        // Using the parameterized constructor
+            Student parameterizedStudent = new Student("Bob", 23, 9998);
+            parameterizedStudent.studentInfo();
 
     }
 }
