@@ -1,9 +1,9 @@
 /*
  * Author: Dawson Brown
- * LMD: January 22 2025
+ * LMD: January 25 2025
  * School: NSCC
  * Course: PROG 1400 Introduction to Object Oriented Programming
- * Exercise #2
+ * Exercise #3
  */
 public class Main {
     public static void main(String[] args) {
@@ -23,7 +23,7 @@ public class Main {
             System.out.println(studentOne.getAge());
             System.out.println(studentOne.getId());
 
-        // Displaying the default values being assigned by the constructor
+        // Using the no-argument constructor
             Student defaultStudent = new Student();
             defaultStudent.studentInfo();
 

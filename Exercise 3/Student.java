@@ -1,9 +1,9 @@
 /*
  * Author: Dawson Brown
- * LMD: January 22 2025
+ * LMD: January 25 2025
  * School: NSCC
  * Course: PROG 1400 Introduction to Object Oriented Programming
- * Exercise #2
+ * Exercise #3
  */
 public class Student {
     /*
