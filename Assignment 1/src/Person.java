@@ -7,12 +7,20 @@ public class Person {
     private String address;
 
     // constructors
+
+    // default constructor
     public Person(){
         name = "default-name";
         age = 0;
         address = "default-address";
     }
 
+    // paramaterized constructor
+    public Person(String name, int age, String address){
+        this.name = name;
+        this.age = age;
+        this.address = address;
+    }
 
     // setters
     public void setName(String name){
