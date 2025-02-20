@@ -47,4 +47,9 @@ public class Person {
     public String getAddress() {
         return address;
     }
+
+    // methods
+    public String displayDetails(){
+        return "\nName: " + name + "\nAge: " + age + "\nAddress: " + address;
+    }
 }
