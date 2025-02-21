@@ -4,18 +4,18 @@ public class Student extends Person {
     private static int idCounter = 1000;
     private String studentId;
 
-    private String major;
-    private double GPA;
+    private String major = "";
+    private String GPA;
 
     // default constructor
     public Student(){
         major = "default-major";
-        GPA = 0;
+        GPA = "0.0";
         studentId = "default-id";
     }
 
     // paramaterized constructor generated with a static variable
-    public Student(String major, double GPA){
+    public Student(String major, String GPA){
         this.major = major;
         this.GPA = GPA;
         studentId = generateStudentId();
@@ -30,26 +30,27 @@ public class Student extends Person {
         return studentId;
     }
 
-    public double getGPA(){
+    public String getGPA(){
         return GPA;
     }
 
     // setters
-    public void setStudentId(){
+    public void setStudentId(String s){
         this.studentId = studentId;
     }
 
-    public void setMajor(){
+    public void setMajor(String s){
         this.major = major;
     }
 
-    public void setGPA(){
+    public void setGPA(String v){
         this.GPA = GPA;
     }
 
     // methods
     public String displayDetails(){
         // Reusing code from the Person class ^.^
+        // https://www.w3schools.com/java/ref_keyword_super.asp
         return super.displayDetails() + "\nID: " + studentId + "\nMajor: " + major + "\nGPA: " + GPA;
     }
 

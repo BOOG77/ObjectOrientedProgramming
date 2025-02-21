@@ -3,7 +3,7 @@ public class Person {
 
     // attributes
     private String name;
-    private int age;
+    private String age;
     private String address;
 
     // constructors
@@ -11,12 +11,12 @@ public class Person {
     // default constructor
     public Person(){
         name = "default-name";
-        age = 0;
+        age = "0";
         address = "default-address";
     }
 
     // paramaterized constructor
-    public Person(String name, int age, String address){
+    public Person(String name, String age, String address){
         this.name = name;
         this.age = age;
         this.address = address;
@@ -27,7 +27,7 @@ public class Person {
         this.name = name;
     }
 
-    public void setAge(int age){
+    public void setAge(String age){
         this.age = age;
     }
 
@@ -40,7 +40,7 @@ public class Person {
         return name;
     }
 
-    public int getAge(){
+    public String getAge(){
         return age;
     }
 
