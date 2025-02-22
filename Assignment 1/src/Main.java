@@ -60,7 +60,7 @@ public class Main {
                 case 2: // display details of all students
                     System.out.println("2- Display details of all students.");
                     break;
-                case 3:
+                case 3: // search student by id
                     System.out.println("3- Search for a student by ID.");
                     break;
 
