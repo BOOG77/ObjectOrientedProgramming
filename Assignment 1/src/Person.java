@@ -1,5 +1,5 @@
 // Create a base class Person
-public class Person {
+abstract class Person {
 
     // attributes
     private String name;

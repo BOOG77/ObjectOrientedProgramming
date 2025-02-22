@@ -57,10 +57,4 @@ public class Student extends Person {
     public static String generateStudentId(){
         return "S" + idCounter++;
     }
-
-    // display method (PERSONAL USE - DELETE THIS)
-    public String displayId(){
-        return studentId;
-    }
-
 }
