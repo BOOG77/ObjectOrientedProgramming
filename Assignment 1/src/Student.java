@@ -10,8 +10,8 @@ public class Student extends Person {
     // default constructor
     public Student(){
         major = "default-major";
-        GPA = "0.0";
-        studentId = "default-id";
+        GPA = "default-gpa";
+        studentId = generateStudentId();
     }
 
     // paramaterized constructor generated with a static variable
@@ -35,15 +35,15 @@ public class Student extends Person {
     }
 
     // setters
-    public void setStudentId(String s){
+    public void setStudentId(String studentId){
         this.studentId = studentId;
     }
 
-    public void setMajor(String s){
+    public void setMajor(String major){
         this.major = major;
     }
 
-    public void setGPA(String v){
+    public void setGPA(String GPA){
         this.GPA = GPA;
     }
 
