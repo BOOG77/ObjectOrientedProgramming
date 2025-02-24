@@ -2,20 +2,23 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
+    // scanner
+    public static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args){
         // making students created variable so display details of all students will display only 2 students if the 3rd isn't created
         int studentsCreated = 2;
 
         // students created
-        Student student = new Student("IT", "3.8");
-        Student student2 = new Student("IT", "3.8");
+        Student student = new Student("IT", "3.8", "Dawson Brown", "23", "22 eCampus Rd");
+        Student student2 = new Student("IT", "3.8", "Jacob Brown", "29", "28 eCampus Rd");
         Student student3 = new Student();
 
         // arraylist of student ids, used for searching student by id
         ArrayList<String> students = new ArrayList<String>();
         students.add(student.getStudentId());
         students.add(student2.getStudentId());
+
 
         // arraylist of student objects
         ArrayList<Student> studentList = new ArrayList<Student>();
@@ -41,7 +44,6 @@ public class Main {
                     }
 
                     System.out.println("1- Add a new student.");
-                    Scanner scanner = new Scanner(System.in);
 
                     // user inputs students name
                     System.out.println("Enter student's name: ");
@@ -73,14 +75,11 @@ public class Main {
                     break;
 
                 case 2: // display details of all students
-                    System.out.println("2- Display details of all students.");
-                    System.out.println(student.displayDetails());
-                    System.out.println(student2.displayDetails());
-
-                    // if third student is created, display details
-                    // by default studentsCreated will be set to 2, display details won't show the third student unless the user has already created it
-                    if(studentsCreated == 3) {
-                        System.out.println(student3.displayDetails());
+                    // https://www.quora.com/How-can-I-access-methods-of-objects-that-are-in-ArrayList-in-Java
+                    // using the ArrayList to iterate through all students created
+                    for(int i = 0; i < studentList.size(); i++){
+                        Student placeholder = studentList.get(i);
+                        System.out.println(placeholder.displayDetails());
                     }
                     break;
 

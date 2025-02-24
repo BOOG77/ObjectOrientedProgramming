@@ -15,7 +15,8 @@ public class Student extends Person {
     }
 
     // paramaterized constructor generated with a static variable
-    public Student(String major, String GPA){
+    public Student(String major, String GPA, String name, String age, String address){
+        super(name, age, address);
         this.major = major;
         this.GPA = GPA;
         studentId = generateStudentId();
@@ -48,6 +49,7 @@ public class Student extends Person {
     }
 
     // methods
+    @Override
     public String displayDetails(){
         // Reusing code from the Person class ^.^
         // https://www.w3schools.com/java/ref_keyword_super.asp
