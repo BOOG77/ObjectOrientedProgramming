@@ -4,8 +4,6 @@ import java.util.Scanner;
 public class Main {
     // scanner
     public static Scanner scanner = new Scanner(System.in);
-
-    // arraylist of student objects
     public static ArrayList<Student> studentList = new ArrayList<Student>();
 
     public static void main(String[] args){
@@ -13,11 +11,18 @@ public class Main {
         int studentsCreated = 2;
 
         // students created
-        Student student = new Student("IT", 3.8, "Dawson Brown", "23", "22 eCampus Rd");
-        Student student2 = new Student("IT", 3.8, "Jacob Brown", "29", "28 eCampus Rd");
+        Student student = new Student("IT", "3.8", "Dawson Brown", "23", "22 eCampus Rd");
+        Student student2 = new Student("IT", "3.8", "Jacob Brown", "29", "28 eCampus Rd");
         Student student3 = new Student();
 
-        // adding them to the array
+        // arraylist of student ids, used for searching student by id
+        ArrayList<String> students = new ArrayList<String>();
+        students.add(student.getStudentId());
+        students.add(student2.getStudentId());
+
+
+        // arraylist of student objects
+
         studentList.add(student);
         studentList.add(student2);
 
@@ -55,10 +60,7 @@ public class Main {
 
                     // user inputs students gpa
                     System.out.println("Enter student's GPA: ");
-
-                    // take users input as a string, then parse it to a double for proper datatypes to be stored
-                    String inputGPA = (scanner.nextLine());
-                    student3.setGPA(Double.parseDouble(inputGPA));
+                    student3.setGPA(scanner.nextLine());
 
                     // user inputs students major
                     System.out.println("Enter student's major: ");
@@ -111,10 +113,7 @@ public class Main {
             }
         }
         while(menuSelection < 5);
-
-        scanner.close();
         }
-
 
     public static int startMenu(){
         // variable to store user's menu selection

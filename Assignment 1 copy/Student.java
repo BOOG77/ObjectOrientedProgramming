@@ -5,17 +5,17 @@ public class Student extends Person {
     private String studentId;
 
     private String major = "";
-    private double GPA;
+    private String GPA;
 
     // default constructor
     public Student(){
         major = "default-major";
-        GPA =  0.00;
+        GPA = "default-gpa";
         studentId = generateStudentId();
     }
 
     // paramaterized constructor generated with a static variable
-    public Student(String major, double GPA, String name, String age, String address){
+    public Student(String major, String GPA, String name, String age, String address){
         super(name, age, address);
         this.major = major;
         this.GPA = GPA;
@@ -33,7 +33,7 @@ public class Student extends Person {
         return studentId;
     }
 
-    public double getGPA(){
+    public String getGPA(){
 
         return GPA;
     }
@@ -49,7 +49,7 @@ public class Student extends Person {
         this.major = major;
     }
 
-    public void setGPA(double GPA){
+    public void setGPA(String GPA){
 
         this.GPA = GPA;
     }
