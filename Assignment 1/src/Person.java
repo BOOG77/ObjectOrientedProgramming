@@ -3,7 +3,7 @@ abstract class Person {
 
     // attributes
     private String name;
-    private String age;
+    private int age;
     private String address;
 
     // constructors
@@ -11,12 +11,12 @@ abstract class Person {
     // default constructor
     public Person(){
         name = "default-name";
-        age = "0";
+        age = 0;
         address = "default-address";
     }
 
     // paramaterized constructor
-    public Person(String name, String age, String address){
+    public Person(String name, int age, String address){
         this.name = name;
         this.age = age;
         this.address = address;
@@ -27,7 +27,7 @@ abstract class Person {
         this.name = name;
     }
 
-    public void setAge(String age){
+    public void setAge(int age){
         this.age = age;
     }
 
@@ -40,7 +40,7 @@ abstract class Person {
         return name;
     }
 
-    public String getAge(){
+    public int getAge(){
         return age;
     }
 

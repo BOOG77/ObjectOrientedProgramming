@@ -15,7 +15,7 @@ public class Student extends Person {
     }
 
     // paramaterized constructor generated with a static variable
-    public Student(String major, double GPA, String name, String age, String address){
+    public Student(String major, double GPA, String name, int age, String address){
         super(name, age, address);
         this.major = major;
         this.GPA = GPA;

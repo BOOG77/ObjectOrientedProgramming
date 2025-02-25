@@ -13,8 +13,8 @@ public class Main {
         int studentsCreated = 2;
 
         // students created
-        Student student = new Student("IT", 3.8, "Dawson Brown", "23", "22 eCampus Rd");
-        Student student2 = new Student("IT", 3.8, "Jacob Brown", "29", "28 eCampus Rd");
+        Student student = new Student("IT", 3.8, "Dawson Brown", 23, "22 eCampus Rd");
+        Student student2 = new Student("IT", 3.8, "Jacob Brown", 29, "28 eCampus Rd");
         Student student3 = new Student();
 
         // adding them to the array
@@ -22,7 +22,7 @@ public class Main {
         studentList.add(student2);
 
         // menu selection variable for later use
-        int menuSelection = 0;
+        int menuSelection;
 
         // do startMenu makes it so the menu re-opens after the user does a menu function
         do{
@@ -47,7 +47,7 @@ public class Main {
 
                     // user inputs students age
                     System.out.println("Enter student's age: ");
-                    student3.setAge(scanner.nextLine());
+                    student3.setAge(scanner.nextInt());
 
                     // user inputs students address
                     System.out.println("Enter student's address: ");
@@ -83,21 +83,26 @@ public class Main {
                     break;
 
                 case 3: // search student by id
-                    scanner = new Scanner(System.in);
+
+                    // built using this reference
+                    // https://www.quora.com/How-can-I-access-methods-of-objects-that-are-in-ArrayList-in-Java
+
                     System.out.println("3- Search for a student by ID.");
+
+                    // get the user id input
                     System.out.print("Enter ID: ");
                     String idSelection = scanner.nextLine();
 
-                    if(idSelection.equals("S1000")){
-                        System.out.println(student.displayDetails());
-                    }
+                    // lookup loop
+                    for (int iterator = 0; iterator < studentList.size(); iterator++){
+                        // iterate through objects, getting id for all objects.
+                        Student objectNum = studentList.get(iterator);
+                        String objectId = objectNum.getStudentId();
 
-                    if(idSelection.equals("S1001")){
-                        System.out.println(student2.displayDetails());
-                    }
-
-                    if (idSelection.equals("S1002")){
-                        System.out.println(student3.displayDetails());
+                        // if id inside the object matches user input id, display details for them
+                        if(objectId.equals(idSelection)){
+                            System.out.println(objectNum.displayDetails());
+                        }
                     }
                     break;
 
@@ -105,6 +110,7 @@ public class Main {
                     // selection is set to 6 to stop the do-while keeping the menu alive
                     menuSelection = 6;
                     break;
+
 
                 default:
                     System.out.println("default");
@@ -118,16 +124,15 @@ public class Main {
 
     public static int startMenu(){
         // variable to store user's menu selection
-        int menuSelection = 0;
-        Scanner scanner = new Scanner(System.in);
+        int menuSelection;
 
-        System.out.println("Select your option:");
-        System.out.println("====================");
-        System.out.println("1- Add a new student.");
-        System.out.println("2- Display details of all students.");
-        System.out.println("3- Search for a student by ID.");
-        System.out.println("4- Exit.");
-        menuSelection = scanner.nextInt();
+                System.out.println("Select your option:");
+                System.out.println("====================");
+                System.out.println("1- Add a new student.");
+                System.out.println("2- Display details of all students.");
+                System.out.println("3- Search for a student by ID.");
+                System.out.println("4- Exit.");
+                menuSelection = scanner.nextInt();
 
         return menuSelection;
     }
