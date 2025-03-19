@@ -49,7 +49,5 @@ abstract class Person {
     }
 
     // methods
-    public String displayDetails(){
-        return "\nName: " + name + "\nAge: " + age + "\nAddress: " + address;
-    }
+    abstract String displayDetails();
 }

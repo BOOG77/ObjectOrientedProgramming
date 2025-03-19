@@ -1,3 +1,5 @@
+
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -12,10 +14,9 @@ public class Main {
         // making students created variable so display details of all students will display only 2 students if the 3rd isn't created
         int studentsCreated = 2;
 
-        // students created
+        // default students created
         Student student = new Student("IT", 3.8, "Dawson Brown", 23, "22 eCampus Rd");
         Student student2 = new Student("IT", 3.8, "Jacob Brown", 29, "28 eCampus Rd");
-        Student student3 = new Student();
 
         // adding them to the array
         studentList.add(student);
@@ -31,41 +32,33 @@ public class Main {
             // menuSelection value is returned, and that determines what case to activate (menu functionality)
             switch(menuSelection){
                 case 1: // add a new student
-
-                    // 3 student objects are created initially to allow the user to "create" a new student.
-                    // really they are filling in the details of a hidden student that is created at the start of the program.
-                    if(studentsCreated == 3){
-                        System.out.println("Max students created (3).");
-                        break;
-                    }
-
                     System.out.println("1- Add a new student.");
 
                     // user inputs students name
                     System.out.println("Enter student's name: ");
-                    student3.setName(scanner.nextLine());
+                    String stuName = scanner.nextLine();
 
                     // user inputs students age
                     System.out.println("Enter student's age: ");
-                    student3.setAge(scanner.nextInt());
+                    String placeholderAge = scanner.nextLine();
+                    int stuAge = Integer.parseInt(placeholderAge);
+
 
                     // user inputs students address
                     System.out.println("Enter student's address: ");
-                    student3.setAddress(scanner.nextLine());
+                    String stuAddress = scanner.nextLine();
 
                     // user inputs students gpa
                     System.out.println("Enter student's GPA: ");
-
-                    // take users input as a string, then parse it to a double for proper datatypes to be stored
-                    String inputGPA = (scanner.nextLine());
-                    student3.setGPA(Double.parseDouble(inputGPA));
+                    String placeholderGPA = (scanner.nextLine());
+                    double stuGPA = Double.parseDouble(placeholderGPA);
 
                     // user inputs students major
                     System.out.println("Enter student's major: ");
-                    student3.setMajor(scanner.nextLine());
+                    String stuMajor = scanner.nextLine();
 
                     // add to array
-                    studentList.add(student3);
+                    studentList.add(new Student(stuMajor, stuGPA, stuName, stuAge, stuAddress));
 
                     // ID is created in the constructor
 
@@ -117,7 +110,6 @@ public class Main {
             }
         }
         while(menuSelection < 5);
-
         scanner.close();
         }
 
@@ -132,8 +124,8 @@ public class Main {
                 System.out.println("2- Display details of all students.");
                 System.out.println("3- Search for a student by ID.");
                 System.out.println("4- Exit.");
-                menuSelection = scanner.nextInt();
-
+                String menuSelectionPlaceholder = scanner.nextLine();
+                menuSelection = Integer.parseInt(menuSelectionPlaceholder);
         return menuSelection;
     }
 }

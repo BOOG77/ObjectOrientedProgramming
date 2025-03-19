@@ -59,10 +59,10 @@ public class Student extends Person {
     public String displayDetails(){
         // Reusing code from the Person class ^.^
         // https://www.w3schools.com/java/ref_keyword_super.asp
-        return super.displayDetails() + "\nID: " + studentId + "\nMajor: " + major + "\nGPA: " + GPA;
+        return "Name: " + super.getName() + "\nAge: " + super.getAge() + "\nAddress: " + super.getAddress() + "\nID: " + studentId + "\nMajor: " + major + "\nGPA: " + GPA;
     }
 
-    public static String generateStudentId(){
+    private static String generateStudentId(){
         return "S" + idCounter++;
     }
 

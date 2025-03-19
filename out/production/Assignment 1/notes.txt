@@ -1,5 +1,9 @@
-change age to int//
+change age to int
 use ArrayList
 lookup loop - could use enhanced for loop, feeling more comfortable with traditional c style
 
 fix crashing if user doesn't input 1-4
+
+-changes
+switch case 3 swapped to a for loop that iterates through the arraylist
+
