@@ -1,3 +1,10 @@
+/*
+ * Author: Dawson Brown
+ * LMD: March 19 2025
+ * School: NSCC
+ * Course: Object Oriented Programming
+ * Assignment: Student Management System
+ */
 // Create a base class Person
 abstract class Person {
 

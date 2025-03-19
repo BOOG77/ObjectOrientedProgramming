@@ -1,3 +1,10 @@
+/*
+ * Author: Dawson Brown
+ * LMD: March 19 2025
+ * School: NSCC
+ * Course: Object Oriented Programming
+ * Assignment: Student Management System
+ */
 public class Student extends Person {
 
     // https://stackoverflow.com/questions/52613765/create-unique-id-with-constructor
